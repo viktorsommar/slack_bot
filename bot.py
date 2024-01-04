@@ -15,5 +15,9 @@ client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 
 client.chat_postMessage(channel='#test-bot', text="Hello world!")
 
+""" @slack_event_adapter.on('message')
+def message(payload):
+  event = payload.get('event', []) """
+
 if __name__ == "__main__":
   app.run(debug=True)
